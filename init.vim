@@ -32,6 +32,7 @@ Plugin 'whatyouhide/vim-gotham'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ap/vim-css-color'
 Plugin 'shmargum/vim-sass-colors'
+Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
@@ -41,6 +42,10 @@ filetype plugin indent on  " allows auto-indenting depending on file type
 " Ayu colorscheme config
 set termguicolors
 let ayucolor="mirage"
+
+" Omnicompletion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
 " General Settings
 syntax on
