@@ -34,6 +34,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'shmargum/vim-sass-colors'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -68,6 +69,7 @@ set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
 set cc=200                  " set an 80 column border for good coding style
 set invspell
+:set list lcs=tab:\|\       " Make Indentline plugin compatible with tab-indented lines
 
 " NERDTree
 let NERDTreeShowHidden=1
