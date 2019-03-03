@@ -32,9 +32,13 @@ Plugin 'whatyouhide/vim-gotham'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ap/vim-css-color'
 Plugin 'shmargum/vim-sass-colors'
+Plugin 'tpope/vim-fugitive'
 Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'ryanoasis/vim-devicons'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
+" Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'posva/vim-vue'
+Plugin 'nikvdp/ejs-syntax'
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -80,10 +84,10 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 " Vim Closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.php'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-let g:closetag_filetypes = 'html,xhtml,phtml,php,jsx,js'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.php,*.ejs'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.ejs'
+let g:closetag_filetypes = 'html,xhtml,phtml,php,jsx,js,ejs'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,ejs'
 
 " Vim Autosave
 let g:auto_save = 1  " enable AutoSave on Vim startup
