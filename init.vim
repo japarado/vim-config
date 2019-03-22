@@ -38,6 +38,7 @@ Plugin 'captbaritone/better-indent-support-for-php-with-html'
 " Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'posva/vim-vue'
 Plugin 'nikvdp/ejs-syntax'
+Plugin 'jwalton512/vim-blade'
 Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
