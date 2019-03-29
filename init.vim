@@ -11,7 +11,7 @@ Plugin 'w0rp/ale'
 " Plugin '/usr/share/fzf/'
 Plugin 'junegunn/fzf.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'valloric/youcompleteme'
 Plugin 'airblade/vim-gitgutter'
@@ -20,9 +20,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-surround'
 Plugin 'alvan/vim-closetag'
 Plugin 'rafi/awesome-vim-colorschemes'
-Plugin 'romainl/Apprentice'
+" Plugin 'romainl/Apprentice'
 Plugin 'sjl/badwolf'
-Plugin 'ayu-theme/ayu-vim'
+" Plugin 'ayu-theme/ayu-vim'
 Plugin 'Yggdroot/indentLine'
 Plugin '907th/vim-auto-save'
 Plugin 'mxw/vim-jsx'
@@ -39,6 +39,7 @@ Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'posva/vim-vue'
 Plugin 'nikvdp/ejs-syntax'
 Plugin 'jwalton512/vim-blade'
+" Plugin 'SirVer/ultisnips'
 Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
@@ -96,6 +97,20 @@ let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 " Tagbar 
 nmap <F8> :TagbarToggle<CR>
+
+" YouCompleteMe
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger       = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
+let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
+
 
 " Vim ALE
 " let g:ale_fix_on_save = 1
