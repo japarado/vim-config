@@ -6,7 +6,8 @@ call vundle#begin('~/.config/nvim/bundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'w0rp/ale'
 " Plugin '/usr/share/fzf/'
 Plugin 'junegunn/fzf.vim'
@@ -39,6 +40,9 @@ Plugin 'captbaritone/better-indent-support-for-php-with-html'
 Plugin 'posva/vim-vue'
 Plugin 'nikvdp/ejs-syntax'
 Plugin 'jwalton512/vim-blade'
+Plugin 'tpope/vim-rails'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'HerringtonDarkholme/yats.vim'
 " Plugin 'SirVer/ultisnips'
 Plugin 'ryanoasis/vim-devicons'
 
@@ -86,7 +90,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 " Vim Closetag
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.php,*.ejs'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.php,*.ejs, *.html.erb'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.ejs'
 let g:closetag_filetypes = 'html,xhtml,phtml,php,jsx,js,ejs'
 let g:closetag_xhtml_filetypes = 'xhtml,jsx,ejs'
