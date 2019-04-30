@@ -34,7 +34,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ap/vim-css-color'
 Plugin 'shmargum/vim-sass-colors'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 " Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'posva/vim-vue'
@@ -44,6 +44,9 @@ Plugin 'tpope/vim-rails'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'HerringtonDarkholme/yats.vim'
 " Plugin 'SirVer/ultisnips'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'tpope/vim-commentary'
+" Plugin 'stephpy/vim-php-cs-fixer'
 Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
@@ -125,3 +128,9 @@ nmap <F7> :ALEFix<CR>
 
 " FZF
 nmap <F6> :Files<CR>
+
+" Clear all tabs except first one
+map <F4> 1gt <bar> :tabonly <CR>
+
+" Vim-php-cs-fixer - fix on save
+" autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
