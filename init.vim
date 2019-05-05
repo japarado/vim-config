@@ -34,7 +34,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ap/vim-css-color'
 Plugin 'shmargum/vim-sass-colors'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ludovicchabant/vim-gutentags'
+" Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 " Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'posva/vim-vue'
@@ -58,8 +58,8 @@ set termguicolors
 let ayucolor="mirage"
 
 " Omnicompletion
-" filetype plugin on
-" set omnifunc=syntaxcomplete#Complete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
 " General Settings
 syntax on
