@@ -1,63 +1,51 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+if &compatible
+  set nocompatible
+endif
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-call vundle#begin('~/.config/nvim/bundle')
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'w0rp/ale'
-Plugin 'mxw/vim-jsx'
-Plugin 'dracula/vim'
-Plugin 'kern/vim-es7'
-Plugin 'posva/vim-vue'
-Plugin 'elzr/vim-json'
-Plugin 'morhetz/gruvbox'
-Plugin 'arzg/vim-wizard'
-Plugin 'ap/vim-css-color'
-Plugin 'junegunn/fzf.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'cohama/lexima.vim'
-" Plugin 'SirVer/ultisnips'
-Plugin 'alvan/vim-closetag'
-Plugin 'tpope/vim-surround'
-Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/nerdtree'
-Plugin '907th/vim-auto-save'
-Plugin 'Yggdroot/indentLine'
-Plugin 'jwalton512/vim-blade'
-Plugin 'tpope/vim-commentary'
-" Plugin 'ajh17/VimCompletesMe'
-Plugin 'itchyny/lightline.vim'
-Plugin 'maximbaz/lightline-ale'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'pangloss/vim-javascript'
-" Plugin 'lifepillar/vim-mucomplete'
-" Plugin 'skywind3000/gutentags_plus'
-" Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'captbaritone/better-indent-support-for-php-with-html'
-Plugin 'ryanoasis/vim-devicons'
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('w0rp/ale')
+  call dein#add('mxw/vim-jsx')
+  call dein#add('kern/vim-es7')
+  call dein#add('posva/vim-vue')
+  call dein#add('elzr/vim-json')
+  call dein#add('morhetz/gruvbox')
+  call dein#add('arzg/vim-wizard')
+  call dein#add('ap/vim-css-color')
+  call dein#add('junegunn/fzf.vim')
+  call dein#add('majutsushi/tagbar')
+  call dein#add('cohama/lexima.vim')
+  call dein#add('alvan/vim-closetag')
+  call dein#add('tpope/vim-surround')
+  call dein#add('honza/vim-snippets')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('907th/vim-auto-save')
+  call dein#add('Yggdroot/indentLine')
+  call dein#add('jwalton512/vim-blade')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('maximbaz/lightline-ale')
+  call dein#add('pangloss/vim-javascript')
+  call dein#add('captbaritone/better-indent-support-for-php-with-html')
+  call dein#add('ryanoasis/vim-devicons')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+  call dein#end()
+  call dein#save_state()
+endif
 
-" Cplor scheme
+filetype plugin indent on
+syntax enable
+
+" Color scheme
 colorscheme gruvbox
 
 " Vim config
