@@ -15,10 +15,11 @@ if dein#load_state('~/.cache/dein')
   call dein#add('posva/vim-vue')
   call dein#add('elzr/vim-json')
   call dein#add('morhetz/gruvbox')
-  call dein#add('arzg/vim-wizard')
   call dein#add('ap/vim-css-color')
   call dein#add('junegunn/fzf.vim')
   call dein#add('majutsushi/tagbar')
+  call dein#add('leafgarland/typescript-vim')
+  call dein#add('neoclide/coc.nvim', {'rev': 'release'})
   call dein#add('cohama/lexima.vim')
   call dein#add('alvan/vim-closetag')
   call dein#add('tpope/vim-surround')
@@ -31,6 +32,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('itchyny/lightline.vim')
   call dein#add('maximbaz/lightline-ale')
   call dein#add('pangloss/vim-javascript')
+  call dein#add('airblade/vim-gitgutter')
   call dein#add('captbaritone/better-indent-support-for-php-with-html')
   call dein#add('ryanoasis/vim-devicons')
   if !has('nvim')
@@ -138,6 +140,11 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" Tagbar settings
+" I want sorting to be in the way that they are ordered in the file as opposed to 
+" the default alphabetical sorting
+let g:tagbar_sort = 0
 
 " Custom keybindings
 map <F4> 1gt <bar> :tabonly <bar> :bufdo bd <bar> :NERDTree<CR>
