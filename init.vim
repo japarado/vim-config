@@ -10,15 +10,10 @@ if dein#load_state('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('w0rp/ale')
-  call dein#add('mxw/vim-jsx')
-  call dein#add('kern/vim-es7')
-  call dein#add('posva/vim-vue')
-  call dein#add('elzr/vim-json')
   call dein#add('morhetz/gruvbox')
   call dein#add('ap/vim-css-color')
   call dein#add('junegunn/fzf.vim')
   call dein#add('majutsushi/tagbar')
-  call dein#add('leafgarland/typescript-vim')
   call dein#add('neoclide/coc.nvim', {'rev': 'release'})
   call dein#add('cohama/lexima.vim')
   call dein#add('alvan/vim-closetag')
@@ -27,13 +22,22 @@ if dein#load_state('~/.cache/dein')
   call dein#add('scrooloose/nerdtree')
   call dein#add('907th/vim-auto-save')
   call dein#add('Yggdroot/indentLine')
-  call dein#add('jwalton512/vim-blade')
+  call dein#add('jwalton512/vim-blade', { 'on_ft': 'blade' })
   call dein#add('tpope/vim-commentary')
   call dein#add('itchyny/lightline.vim')
   call dein#add('maximbaz/lightline-ale')
-  call dein#add('pangloss/vim-javascript')
+  call dein#add('pangloss/vim-javascript', { 'on_ft': 'javascript' })
+  call dein#add('othree/yajs.vim', { 'on_ft': 'javascript' } )
+  call dein#add('jelera/vim-javascript-syntax', { 'on_ft': 'javascript' })
+  call dein#add('mxw/vim-jsx', { 'on_ft': 'javascript' })
+  call dein#add('mxw/vim-jsx', { 'on_ft': 'javascript' })
+  call dein#add('kern/vim-es7', { 'on_ft': 'javascript' })
+  call dein#add('posva/vim-vue', { 'on_ft': ['javascript', 'vue'] })
+  call dein#add('elzr/vim-json', { 'on_ft': 'javascript' })
+  call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
   call dein#add('airblade/vim-gitgutter')
-  call dein#add('captbaritone/better-indent-support-for-php-with-html')
+  call dein#add('tpope/vim-obsession')
+  call dein#add('captbaritone/better-indent-support-for-php-with-html', { 'on_ft': 'php' })
   call dein#add('ryanoasis/vim-devicons')
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
@@ -53,6 +57,8 @@ colorscheme gruvbox
 " Vim config
 filetype plugin on
 filetype plugin indent on
+set autoindent
+set smartindent
 set termguicolors
 set number
 set cursorline
@@ -62,6 +68,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set mouse=a
+set shell=/usr/bin/zsh
+set autoread
 " set omnifunc=syntaxcomplete#Complete
 setlocal spell spelllang=en_us
 let g:ruby_host_prog = "/usr/bin/ruby"
@@ -147,7 +155,6 @@ endfunction
 let g:tagbar_sort = 0
 
 " Custom keybindings
-map <F4> 1gt <bar> :tabonly <bar> :bufdo bd <bar> :NERDTree<CR>
 map <F7> :ALEFix <CR>
 map <F5> :NERDTree <CR>
 nmap <F8> :TagbarToggle<CR>
