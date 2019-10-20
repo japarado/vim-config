@@ -37,6 +37,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
   call dein#add('airblade/vim-gitgutter')
   call dein#add('tpope/vim-obsession')
+  call dein#add('tomasr/molokai')
   call dein#add('captbaritone/better-indent-support-for-php-with-html', { 'on_ft': 'php' })
   call dein#add('ryanoasis/vim-devicons')
   if !has('nvim')
@@ -159,3 +160,4 @@ map <F7> :ALEFix <CR>
 map <F5> :NERDTree <CR>
 nmap <F8> :TagbarToggle<CR>
 map <F6> :!ctags -R & <CR>
+" tnoremap <Esc> <C-Bslash><C-n>
