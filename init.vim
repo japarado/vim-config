@@ -22,6 +22,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('scrooloose/nerdtree')
   call dein#add('907th/vim-auto-save')
   call dein#add('Yggdroot/indentLine')
+  " call dein#add('tpope/vim-rails', { 'on_ft': 'eruby' })
+  call dein#add('tpope/vim-rails', { 'on_ft': 'eruby' })
   call dein#add('jwalton512/vim-blade', { 'on_ft': 'blade' })
   call dein#add('tpope/vim-commentary')
   call dein#add('itchyny/lightline.vim')
@@ -35,10 +37,17 @@ if dein#load_state('~/.cache/dein')
   call dein#add('posva/vim-vue', { 'on_ft': ['javascript', 'vue'] })
   call dein#add('elzr/vim-json', { 'on_ft': 'javascript' })
   call dein#add('leafgarland/typescript-vim', { 'on_ft': 'typescript' })
+  call dein#add('peitalin/vim-jsx-typescript', { 'on_ft': 'typescriptreact' })
   call dein#add('airblade/vim-gitgutter')
   call dein#add('tpope/vim-obsession')
   call dein#add('tomasr/molokai')
   call dein#add('captbaritone/better-indent-support-for-php-with-html', { 'on_ft': 'php' })
+  call dein#add('StanAngeloff/php.vim', { 'on_ft': 'php' })
+  call dein#add('sovetnik/vim-hanami')
+  call dein#add('cespare/vim-toml', { 'on_ft' : 'toml' })
+  call dein#add('neowit/vim-force.com', { 'on_ft': 'apexcode' })
+  call dein#add('micheal-w-wells/vim-sfdx-force', { 'on_ft': 'apexcode' })
+  call dein#add('rust-lang/rust.vim')
   call dein#add('ryanoasis/vim-devicons')
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
@@ -75,15 +84,15 @@ set autoread
 setlocal spell spelllang=en_us
 let g:ruby_host_prog = "/usr/bin/ruby"
 
-" Auto close brackets
-"inoremap " ""<left>
-"inoremap ' ''<left>
-"inoremap ( ()<left>
-"inoremap [ []<left>
-"inoremap { {}<left>
-"inoremap {<CR> {<CR>}<ESC>O
-"inoremap {;<CR> {<CR>};<ESC>O
-"inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+" Custom Vim configurations for CoC
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+
 
 " NERDTree config
 autocmd vimenter * NERDTree
@@ -124,10 +133,10 @@ let g:ale_fixers = {
 "let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 
 " Vim Closetag config
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.php,*.ejs,*.html.erb,*.vue'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.ejs,*.vue'
-let g:closetag_filetypes = 'html,xhtml,phtml,php,jsx,js,ejs,vue'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx,ejs,vue'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js,*.php,*.ejs,*.html.erb,*.vue,*.tsx'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.ejs,*.vue,*.tsx'
+let g:closetag_filetypes = 'html,xhtml,phtml,php,jsx,js,ejs,vue,*.tsx'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,ejs,vue,tsx'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_regions = {
     \ 'typescript.tsx': 'jsxRegion,tsxRegion',
@@ -161,3 +170,14 @@ map <F5> :NERDTree <CR>
 nmap <F8> :TagbarToggle<CR>
 map <F6> :!ctags -R & <CR>
 " tnoremap <Esc> <C-Bslash><C-n>
+let NERDTreeMinimalUI = 1
+
+" Keybindings for navigating quickly to errors (ALE)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+
+" Lightline settings 
+let g:lightline = {
+    \ 'colorscheme': 'wombat'
+    \ }
